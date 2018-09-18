@@ -30,9 +30,18 @@ app.use(
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
-
+led 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/week18Populater";
+​
+// Set mongoose to leverage built in JavaScript ES6 Promises
+​
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/week18Populater", { useNewUrlParser: true });
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+});
+
+// // Connect to the Mongo DB
+// mongoose.connect("mongodb://localhost/week18Populater", { useNewUrlParser: true });
 
 // First, tell the console what server.js is doing
 console.log("\n***********************************\n" +
